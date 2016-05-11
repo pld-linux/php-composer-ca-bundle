@@ -1,17 +1,17 @@
-# TODO
-# - system ca certs
 %define		php_min_version 5.3.2
 %define		pkgname	ca-bundle
 %include	/usr/lib/rpm/macros.php
 Summary:	Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle
 Name:		php-composer-%{pkgname}
 Version:	1.0.2
-Release:	0.1
+Release:	1
 License:	MIT
-Group:		Development/Libraries
+Group:		Development/Languages/PHP
 Source0:	https://github.com/composer/ca-bundle/archive/%{version}/%{pkgname}-%{version}.tar.gz
 # Source0-md5:	0e08430806fbcad13b8e568a854e5b4e
 URL:		https://github.com/composer/ca-bundle
+Patch0:		system-ca-certs.patch
+Requires:	ca-certificates >= 20141019-3
 Requires:	php(core) >= %{php_min_version}
 Requires:	php(openssl)
 Requires:	php(pcre)
@@ -27,6 +27,7 @@ made available as a stand-alone library.
 
 %prep
 %setup -q -n %{pkgname}-%{version}
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
