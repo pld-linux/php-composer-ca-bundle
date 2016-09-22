@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle
 Name:		php-composer-%{pkgname}
-Version:	1.0.2
+Version:	1.0.3
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/composer/ca-bundle/archive/%{version}/%{pkgname}-%{version}.tar.gz
-# Source0-md5:	0e08430806fbcad13b8e568a854e5b4e
+# Source0-md5:	c00b86ac1f7126ca28c022789d500edf
 URL:		https://github.com/composer/ca-bundle
 Patch0:		system-ca-certs.patch
 Requires:	ca-certificates >= 20141019-3
