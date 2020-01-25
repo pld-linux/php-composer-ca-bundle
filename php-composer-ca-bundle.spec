@@ -1,6 +1,5 @@
 %define		php_min_version 5.3.2
 %define		pkgname	ca-bundle
-%include	/usr/lib/rpm/macros.php
 Summary:	Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle
 Name:		php-composer-%{pkgname}
 Version:	1.2.3
