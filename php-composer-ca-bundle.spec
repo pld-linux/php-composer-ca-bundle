@@ -26,7 +26,7 @@ made available as a stand-alone library.
 
 %prep
 %setup -q -n %{pkgname}-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
