@@ -3,7 +3,7 @@
 Summary:	Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle
 Name:		php-composer-%{pkgname}
 Version:	1.2.3
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/composer/ca-bundle/archive/%{version}/%{pkgname}-%{version}.tar.gz
