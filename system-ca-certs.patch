@@ -1,6 +1,6 @@
---- ca-bundle-1.1.3/src/CaBundle.php~	2018-10-18 09:09:13.000000000 +0300
-+++ ca-bundle-1.1.3/src/CaBundle.php	2018-11-05 01:38:02.282995447 +0200
-@@ -130,24 +130,7 @@
+--- ca-bundle-1.5.11/src/CaBundle.php.orig	2024-07-08 15:28:07.000000000 +0200
++++ ca-bundle-1.5.11/src/CaBundle.php	2024-07-08 15:28:07.000000000 +0200
+@@ -122,29 +122,7 @@
       */
      public static function getBundledCaBundlePath()
      {
@@ -9,8 +9,13 @@
 -        // cURL does not understand 'phar://' paths
 -        // see https://github.com/composer/ca-bundle/issues/10
 -        if (0 === strpos($caBundleFile, 'phar://')) {
+-            $tempCaBundleFile = tempnam(sys_get_temp_dir(), 'openssl-ca-bundle-');
+-            if (false === $tempCaBundleFile) {
+-                throw new \RuntimeException('Could not create a temporary file to store the bundled CA file');
+-            }
+-
 -            file_put_contents(
--                $tempCaBundleFile = tempnam(sys_get_temp_dir(), 'openssl-ca-bundle-'),
+-                $tempCaBundleFile,
 -                file_get_contents($caBundleFile)
 -            );
 -
@@ -24,5 +29,5 @@
 -        return $caBundleFile;
 +        return '/etc/pki/tls/certs/ca-bundle.crt';
      }
- 
+
      /**
